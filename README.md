@@ -1,2 +1,3 @@
-# tada
-social data visualization
+# Tada
+An ETC project.
+UGC data visualization platform.
