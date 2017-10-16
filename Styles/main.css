@@ -24,6 +24,8 @@ body {
 	height: 100vh;
 	overflow: hidden;
 	list-style: none;
+	float: left;
+	margin: 0;
 }
 
 .LeftBarLabel {
@@ -91,7 +93,17 @@ body {
 	color: #000;
 }
 
-.ChartStage {
+#ChartStage {
+	position: relative;
 	height: 100%;
-	width: 100%;
+	width: calc(100% - 300px);
+	border: 1px solid black;
+	left: 300px;
+	top: 200px;
+}
+
+#Footer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
 }
