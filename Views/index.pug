@@ -1,0 +1,15 @@
+doctype html
+html(leng="en")
+	head
+		title= title
+		link(rel='stylesheet', href='./Styles/main.css')
+		link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway')
+	body(
+		id= 'raw-data'
+		class= 'hidden-data'
+		data-data= data
+	)
+		include Header.pug
+		include LeftBar.pug
+		include TopBar.pug
+		include Footer.pug

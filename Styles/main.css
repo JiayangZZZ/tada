@@ -1,0 +1,23 @@
+
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
+.Logo {
+	height: 30px;
+	float: left;
+	margin-right: 40px;
+}
+
+.Title {
+	font-size: 24px;
+}
+
+.Labels {
+	width: 200px;
+	padding: 20px;
+}
+
+.Label {
+	margin: 20px;
+}
