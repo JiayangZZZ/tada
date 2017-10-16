@@ -14,34 +14,33 @@ app.use('/Images', express.static('Images'));
 app.set('view engine', 'pug');
 
 app.get('/', function(req, res) {
-  res.render('index', {
-    title: "Tada Interface Prototype",
-    data: [{
-      "name": "tag1",
-      "video_count": 1234
-    },{
-      "name": "tag2",
-      "video_count": 123423
-    },{
-      "name": "tag3",
-      "video_count": 331234
-    }]
-  })
-  // request.get({
-  //   headers: {'content-type' : 'application/json; charset=utf-8'},
-  //   url: 'http://10.14.41.20:8081/api/label/59e1538b6b9b9a4b18c8e3da',
-  //   json: true
-  // }, function(err, r, body) {
-  //   if(err)
-  //     console.log(err);
-  //   else {
-  //     res.render('index', {
-  //       title: "Tada interface prototype",
-  //       message: "testing",
-  //       data: "asdfasdfasf"
-  //     })
-  //   }
+  // res.render('index', {
+  //   title: "Tada Interface Prototype",
+  //   data: [{
+  //     "name": "tag1",
+  //     "video_count": 1234
+  //   },{
+  //     "name": "tag2",
+  //     "video_count": 123423
+  //   },{
+  //     "name": "tag3",
+  //     "video_count": 331234
+  //   }]
   // })
+  request.get({
+    headers: {'content-type' : 'application/json; charset=utf-8'},
+    url: 'http://10.14.41.20:8081/api/labels',
+    json: true
+  }, function(err, r, body) {
+    if(err)
+      console.log(err);
+    else {
+      res.render('index', {
+        title: "Tada interface prototype",
+        data: body.data
+      })
+    }
+  })
 })
 
 /*

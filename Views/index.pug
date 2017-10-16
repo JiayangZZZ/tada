@@ -3,7 +3,8 @@ html(leng="en")
 	head
 		title= title
 		link(rel='stylesheet', href='./Styles/main.css')
-		link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway')
+	script(src='./Scripts/pixi.min.js')
+	script(src='./Scripts/jquery-3.2.1.min.js')
 	body(
 		id= 'raw-data'
 		class= 'hidden-data'
@@ -12,4 +13,8 @@ html(leng="en")
 		include Header.pug
 		include LeftBar.pug
 		include TopBar.pug
+		include Chart.pug
 		include Footer.pug
+
+	script(src='./Scripts/navigate.js')
+	script(src='./Scripts/stage.js')
