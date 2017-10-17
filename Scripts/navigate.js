@@ -55,13 +55,36 @@ function drawDots(data) {
 			dot.y = height - 20*(k+1);
 			dot.interactive = true;
 			dot.buttonMode = true;
+			dot.index = [j,k];
 
+			dot.on('mousedown', (e) => {
+					showVideo(data.history.videos[e.target.index[0]][e.target.index[1]]);
+				})
 			stage.addChild(dot); 
 		}
 	}
 	renderer.render(stage);
 }
 
-function showVideo(href) {
+function showVideo(data) {
+	
+	
+	$('.Overlay').removeClass('hidden').addClass('reveal');
+	$('.OverlayVideo').attr('src', 'https://www.youtube.com/embed/'+ getId(data.href) +'?autoplay=1');
 
 }
+
+function getId(url) {
+    var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    var match = url.match(regExp);
+
+    if (match && match[2].length == 11) {
+        return match[2];
+    } else {
+        return 'error';
+    }
+}
+
+$('.OverlayClose').click(function() {
+	$('.Overlay').removeClass('reveal').addClass('hidden');
+})

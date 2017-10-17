@@ -105,3 +105,34 @@ body {
 	bottom: 0;
 	right: 0;
 }
+
+.Overlay {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	margin: auto;
+}
+
+.OverlayVideo {
+	width: 840px;
+	height: 630px;
+}
+
+.OverlayClose {
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	right: 20px;
+	top: 0;
+	background-image: url('https://d30y9cdsu7xlg0.cloudfront.net/png/6448-200.png');
+	background-size: 40px 40px;
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
+
+.reveal {
+	z-index: 100;
+}
