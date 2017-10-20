@@ -44,6 +44,99 @@ $(document).ready(function() {
 	})
 })
 
+// var data = {
+//   "name": "Darth Vador",
+//   "id": "asdfasdfasdf",
+//   "video_count": 123343,
+//   "relations": [
+//     {
+//       "id": "asdfasdfasdf",
+//       "name": "Battlefront2",
+//       "is_meta": true,
+//       "count": 455
+//     },
+//     {
+//       "id": "asdfasdfasdf",
+//       "name": "Starwhat",
+//       "is_meta": false,
+//       "count": 450
+//     }
+//   ],
+//   "history": {
+//     "grouped_by": "hour",
+//     "videos": [
+//       [
+//         {
+//           "id": "asdfasdfasdfasfd",
+//           "href": "http://www.youtube.2",
+//           "title": "One Awesome Video",
+//           "views": 123123
+//         },
+//         {
+//           "id": "asdfasdfasdfasfd",
+//           "href": "http://www.youtube.3",
+//           "title": "One Awesome Video",
+//           "views": 123123
+//         }
+//       ],[
+//         {
+//           "id": "asdfasdfasdfasfd",
+//           "href": "http://www.youtube.1",
+//           "title": "One Awesome Video",
+//           "views": 123123
+//         },
+//         {
+//           "id": "asdfasdfasdfasfd",
+//           "href": "http://www.youtube.2",
+//           "title": "One Awesome Video",
+//           "views": 123123
+//         },
+//         {
+//           "id": "asdfasdfasdfasfd",
+//           "href": "http://www.youtube.3",
+//           "title": "One Awesome Video",
+//           "views": 123123
+//         }
+//       ],[
+//         {
+//           "id": "asdfasdfasdfasfd",
+//           "href": "http://www.youtube.1",
+//           "title": "One Awesome Video",
+//           "views": 123123
+//         },
+//         {
+//           "id": "asdfasdfasdfasfd",
+//           "href": "http://www.youtube.3",
+//           "title": "One Awesome Video",
+//           "views": 123123
+//         }
+//       ],
+//       [
+//         {
+//           "id": "asdfasdfasdfasfd",
+//           "href": "http://www.youtube.1",
+//           "title": "One Awesome Video",
+//           "views": 123123
+//         },
+//         {
+//           "id": "asdfasdfasdfasfd",
+//           "href": "http://www.youtube.2",
+//           "title": "One Awesome Video",
+//           "views": 123123
+//         },
+//         {
+//           "id": "asdfasdfasdfasfd",
+//           "href": "http://www.youtube.3",
+//           "title": "One Awesome Video",
+//           "views": 123123
+//         }
+//       ]
+//     ]
+//   }
+// }
+
+// drawDots(data);
+
 function drawDots(data) {
 	var stage = new PIXI.Container();
 	for(var j = 0; j < data.history.videos.length; j++) {
