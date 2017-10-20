@@ -2,22 +2,33 @@
 body {
 	font-family: 'Raleway', sans-serif;
 	background-color: #10181d;
+	margin: 0;
 }
 
 .Header {
-	position: relative;
+	position: fixed;
+	height: 70px;
+	top: -60px;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.3);
+	z-index: 100;
+	-webkit-transition: top 0.2s; /* Safari */
+    transition: top 0.2s;
+}
+
+.Header:hover {
 	top: 0;
 }
 
 .Logo {
 	height: 30px;
 	float: left;
-	margin-right: 40px;
-	margin-left: 20px;
+	margin: 20px;
 }
 
 .Title {
 	font-size: 24px;
+	text-transform: uppercase;
 }
 
 .LeftBarLabels {
@@ -79,7 +90,6 @@ body {
 
 .TopBarLabels {
 	position: absolute;
-	top: 90px;
 	left: 300px;
 	overflow: hidden;
 	text-transform: uppercase;
@@ -90,7 +100,7 @@ body {
 }
 
 .CurrentLabelName {
-	font-size: 34px;
+	font-size: 42px;
 	font-weight: 900;
 	margin: 0 50px;
 	color: #fff;
@@ -111,15 +121,9 @@ body {
 
 #ChartStage {
 	position: absolute;
-	top: 250px;
+	top: 150px;
 	right: 20px;
 	float: right;
-}
-
-#Footer {
-	position: absolute;
-	bottom: 0;
-	right: 0;
 }
 
 .Overlay {
@@ -151,4 +155,16 @@ body {
 
 .reveal {
 	z-index: 100;
+}
+
+#Footer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.Timeline {
+	width: 100%;
+	background-color: #efefef;
+	height: 50px;
 }
