@@ -1,6 +1,7 @@
 
 body {
 	font-family: 'Raleway', sans-serif;
+	background-color: #10181d;
 }
 
 .Header {
@@ -23,10 +24,23 @@ body {
 	width: 280px;
 	padding: 20px;
 	height: 100vh;
-	overflow: scroll;
+	overflow-y: scroll;
 	list-style: none;
 	float: left;
 	margin: 0;
+}
+
+.LeftBarLabels::-webkit-scrollbar-track {
+	background-color: #10181d;
+}
+
+.LeftBarLabels::-webkit-scrollbar {
+	background-color: #10181d;
+	width: 10px;
+}
+
+.LeftBarLabels::-webkit-scrollbar-thumb {
+	background-color: #223c4c;
 }
 
 .LeftBarLabel {
@@ -43,12 +57,13 @@ body {
 	float: left;
 	text-transform: uppercase;
 	font-weight: 900;
+	font-size: 14px;
 	color: #ababab;
 	margin: 10px 0;
 }
 
 .LeftBarLabelName:hover {
-	color: #000;
+	color: #fff;
 }
 
 .LeftBarLabelCount {
@@ -58,7 +73,7 @@ body {
 	display: table-cell;
 	vertical-align: middle;
 	color: #ababab;
-	font-size: 20px;
+	font-size: 14px;
 	margin: 10px 0;
 }
 
@@ -78,19 +93,20 @@ body {
 	font-size: 34px;
 	font-weight: 900;
 	margin: 0 50px;
+	color: #fff;
 }
 
 .CurrentLabelRelationsName {
 	float: left;
 	margin: 10px;
 	color: #ababab;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 900;
 	cursor: pointer;
 }
 
 .CurrentLabelRelationsName:hover {
-	color: #000;
+	color: #fff;
 }
 
 #ChartStage {
