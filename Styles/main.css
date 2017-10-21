@@ -164,7 +164,33 @@ body {
 }
 
 .Timeline {
+	position: relative;
 	width: 100%;
 	background-color: #efefef;
 	height: 50px;
+}
+
+.TimelineSlider {
+	position: relative;
+	width: 200px;
+	background-color: #6f6f6f;
+	height: 100%;
+}
+
+.TimelineHandleLower {
+	display: inline-block;
+	position: relative;
+	left: 0;
+	width: 20px;
+	background-color: #ffc267;
+	height: 60px;
+}
+
+.TimelineHandleUpper {
+	display: inline-block;
+	position: relative;
+	right: 0;
+	width: 20px;
+	background-color: #ff6e67;
+	height: 60px;
 }
