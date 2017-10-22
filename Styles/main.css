@@ -159,6 +159,7 @@ body {
 
 #Footer {
 	position: absolute;
+	width: 100%;
 	bottom: 0;
 	right: 0;
 }
@@ -179,7 +180,7 @@ body {
 
 .TimelineHandleLower {
 	display: inline-block;
-	position: relative;
+	position: absolute;
 	left: 0;
 	width: 20px;
 	background-color: #ffc267;
@@ -188,7 +189,7 @@ body {
 
 .TimelineHandleUpper {
 	display: inline-block;
-	position: relative;
+	position: absolute;
 	right: 0;
 	width: 20px;
 	background-color: #ff6e67;
