@@ -95,6 +95,13 @@ body {
 	text-transform: uppercase;
 }
 
+.LastLabelName {
+	font-size: 20px;
+	font-weight: 900;
+	margin: 10px 50px;
+	color: #68a9ff;
+}
+
 .CurrentLabelRelations {
 	list-style: none;
 }
