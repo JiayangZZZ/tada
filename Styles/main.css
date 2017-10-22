@@ -142,23 +142,68 @@ canvas {
 }
 
 .Overlay {
-	position: relative;
-	height: 100%;
-	width: 100%;
+	position: absolute;
+	height: 600px;
+	width: 900px;
 	margin: auto;
+	top: 50px;
 }
 
 .OverlayVideo {
-	width: 840px;
-	height: 630px;
+	width: 100%;
+	height: 80%;
+	border: none;
+}
+
+.OverlayInfo {
+	width: 100%;
+	height: 20%;
+	color: #fff;
+	padding: 10px;
+	font-size: 12px;
+}
+
+.VideoTitle {
+	font-size: 24px;
+}
+
+.VideoDescription {
+	color: #ababab;
+}
+
+.VideoChannel {
+	float: left;
+	margin: 5px 20px 5px 0;
+}
+
+.VideoView {
+	float: left;
+	margin: 5px 20px 5px 0;
+}
+
+.VideoPostedTime {
+	float: left;
+	margin: 5px 20px 5px 0;
+}
+
+.VideoLabels {
+	float: left;
+	padding: 0;
+}
+
+.VideoLabelsName {
+	float: left;
+	list-style: none;
+	margin-right: 20px;
+	font-weight: 900;
 }
 
 .OverlayClose {
 	height: 40px;
 	width: 40px;
 	position: absolute;
-	right: 20px;
-	top: 0;
+	right: -20px;
+	top: -20px;
 	background-image: url('https://d30y9cdsu7xlg0.cloudfront.net/png/6448-200.png');
 	background-size: 40px 40px;
 	cursor: pointer;
