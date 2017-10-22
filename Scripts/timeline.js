@@ -41,8 +41,8 @@ function sliderMouseDown(e) {
 }
 
 function sliderMove(e) {
-	slider.css({right:  - e.clientX + sliderMove.mouseDown - sliderMove.oldX + 'px'});
-	canvas.css({right: e.clientX - sliderMove.mouseDown + sliderMove.oldX + 'px'});
+	slider.css({right: sliderMove.mouseDown - e.clientX + sliderMove.oldX + 'px'});
+	canvas.css({right: e.clientX - sliderMove.mouseDown - sliderMove.oldX + 'px'});
 }
 
 // function lowerHandleMouseDown(e){
