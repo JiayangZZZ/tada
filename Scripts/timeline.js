@@ -16,8 +16,6 @@ var lowerHandle = $('.TimelineHandleLower')
 	, slider = $('.TimelineSlider')
 	, canvas = $('canvas');
 
-console.log(canvas)
-
 addListeners();
 
 function addListeners(){

@@ -176,7 +176,7 @@ canvas {
 	position: relative;
 	width: 100%;
 	background-color: #efefef;
-	height: 50px;
+	height: 40px;
 }
 
 .TimelineSlider {
@@ -187,13 +187,17 @@ canvas {
 	height: 100%;
 }
 
+.TimelineSlider:hover {
+	opacity: 0.8;
+}
+
 .TimelineHandleLower {
 	display: inline-block;
 	position: absolute;
 	left: 0;
 	width: 20px;
 	background-color: #ffc267;
-	height: 60px;
+	height: 100%;
 }
 
 .TimelineHandleUpper {
@@ -202,7 +206,7 @@ canvas {
 	right: 0;
 	width: 20px;
 	background-color: #ff6e67;
-	height: 60px;
+	height: 100%;
 }
 
 #particles-js {
