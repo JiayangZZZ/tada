@@ -1,5 +1,5 @@
-var width = 1000
-	, height =550;
+var width = 1200
+	, height =400;
 
 var renderer = PIXI.autoDetectRenderer(width, height, {
 	transparent: true,

@@ -124,6 +124,14 @@ body {
 	top: 150px;
 	right: 20px;
 	float: right;
+	width: 800px;
+	height: 400px;
+	overflow: hidden;
+}
+
+canvas {
+	position: absolute;
+	right: 0;
 }
 
 .Overlay {
@@ -172,8 +180,9 @@ body {
 }
 
 .TimelineSlider {
-	position: relative;
+	position: absolute;
 	width: 200px;
+	right: 0;
 	background-color: #6f6f6f;
 	height: 100%;
 }

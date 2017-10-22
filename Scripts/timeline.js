@@ -12,34 +12,51 @@ var width = 1000
 
 
 var lowerHandle = $('.TimelineHandleLower')
-	, upperHandle = $('.TimelineHandleUpper');
+	, upperHandle = $('.TimelineHandleUpper')
+	, slider = $('.TimelineSlider')
+	, canvas = $('canvas');
+
+console.log(canvas)
 
 addListeners();
 
 function addListeners(){
-	lowerHandle.on('mousedown', lowerHandleMouseDown);
-	upperHandle.on('mousedown', upperHandleMouseDown);
+	// lowerHandle.on('mousedown', lowerHandleMouseDown);
+	// upperHandle.on('mousedown', upperHandleMouseDown);
+	slider.on('mousedown', sliderMouseDown);
 	window.addEventListener('mouseup', mouseUp, false);
 }
 
 function mouseUp()
 {
-	window.removeEventListener('mousemove', lowerHandleMove, true);
-	window.removeEventListener('mousemove', upperHandleMove, true);
+	// window.removeEventListener('mousemove', lowerHandleMove, true);
+	// window.removeEventListener('mousemove', upperHandleMove, true);
+	window.removeEventListener('mousemove', sliderMove, true);
 }
 
-function lowerHandleMouseDown(e){
-	window.addEventListener('mousemove', lowerHandleMove, true);
+function sliderMouseDown(e) {
+	sliderMove.mouseDown = e.clientX;
+	sliderMove.oldX = parseInt(slider.css('right'))
+	window.addEventListener('mousemove', sliderMove, true);
 }
 
-function lowerHandleMove(e){
-	lowerHandle.css({left: e.clientX + 'px'});
+function sliderMove(e) {
+	slider.css({right:  - e.clientX + sliderMove.mouseDown - sliderMove.oldX + 'px'});
+	canvas.css({right: e.clientX - sliderMove.mouseDown + sliderMove.oldX + 'px'});
 }
 
-function upperHandleMouseDown(e){
-	window.addEventListener('mousemove', upperHandleMove, true);
-}
+// function lowerHandleMouseDown(e){
+// 	window.addEventListener('mousemove', lowerHandleMove, true);
+// }
 
-function upperHandleMove(e){
-	upperHandle.css({left: e.clientX + 'px'});
-}
+// function lowerHandleMove(e){
+// 	lowerHandle.css({left: e.clientX + 'px'});
+// }
+
+// function upperHandleMouseDown(e){
+// 	window.addEventListener('mousemove', upperHandleMove, true);
+// }
+
+// function upperHandleMove(e){
+// 	upperHandle.css({left: e.clientX + 'px'});
+// }
