@@ -160,11 +160,10 @@ function drawDots(data) {
 }
 
 function showVideo(data) {
-	
-	
 	$('.Overlay').removeClass('hidden').addClass('reveal');
 	$('.OverlayVideo').attr('src', 'https://www.youtube.com/embed/'+ getId(data.href) +'?autoplay=1');
-
+	$('.Overlay').addClass('load');
+	$('.OverlayVideo').addClass('load');
 }
 
 function getId(url) {
@@ -179,5 +178,9 @@ function getId(url) {
 }
 
 $('.OverlayClose').click(function() {
-	$('.Overlay').removeClass('reveal').addClass('hidden');
+	$('.Overlay').removeClass('reveal').removeClass('load');
+	$('.OverlayVideo').removeClass('load');
+	setTimeout(function() {
+		$('.Overlay').addClass('hidden');
+	}, 1000);
 })
