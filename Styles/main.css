@@ -195,6 +195,7 @@ canvas {
 .VideoLabels {
 	float: left;
 	padding: 0;
+	margin: 5px 0;
 }
 
 .VideoLabelsName {
