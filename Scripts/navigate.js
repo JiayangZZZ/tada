@@ -10,45 +10,45 @@ var renderer = PIXI.autoDetectRenderer(width, height, {
 document.getElementById('ChartStage').appendChild(renderer.view);
 var stage = new PIXI.Container();
 
-$('.LastLabelName').html("Watermellon");
+// $('.LastLabelName').html("Watermellon");
 
-$('.CurrentLabelName').html("Darth Vader");
-for(var i = 0; i< 5; i++) {
-	$('.CurrentLabelRelations').children().eq(i).html("Relation Name" + i)
-}
-// $(document).ready(function() {
-// 	$('.LeftBarLabel').click(function(e) {
-// 		var id = e.currentTarget.id;
-// 		$.get('http://10.14.41.20:8081/api/labels/'+id, function(data, status){
-// 			console.log(data)
-// 			$('.CurrentLabelName').html(data.name);
-// 			for(var i = 0; i < 10; i++) {
-// 				if(data.relations[i]) {
-// 					$('.CurrentLabelRelations').children().eq(i).html(data.relations[i].name);
-// 					$('.CurrentLabelRelations').children().eq(i).attr('id', data.relations[i].id);
-// 				}
+// $('.CurrentLabelName').html("Darth Vader");
+// for(var i = 0; i< 5; i++) {
+// 	$('.CurrentLabelRelations').children().eq(i).html("Relation Name" + i)
+// }
+$(document).ready(function() {
+	$('.LeftBarLabel').click(function(e) {
+		var id = e.currentTarget.id;
+		$.get('http://10.14.41.20:8081/api/labels/'+id, function(data, status){
+			console.log(data)
+			$('.CurrentLabelName').html(data.name);
+			for(var i = 0; i < 10; i++) {
+				if(data.relations[i]) {
+					$('.CurrentLabelRelations').children().eq(i).html(data.relations[i].name);
+					$('.CurrentLabelRelations').children().eq(i).attr('id', data.relations[i].id);
+				}
 				
-// 				drawDots(data);
-// 			}
-// 		})
-// 	})
+				drawDots(data);
+			}
+		})
+	})
 
-// 	$('.CurrentLabelRelationsName').click(function(e) {
-// 		var id = e.currentTarget.id;
-// 		$.get('http://10.14.41.20:8081/api/labels/'+id, function(data, status){
-// 			console.log(data)
-// 			$('.CurrentLabelName').html(data.name);
-// 			for(var i = 0; i < 10; i++) {
-// 				if(data.relations[i]) {
-// 					$('.CurrentLabelRelations').children().eq(i).html(data.relations[i].name);
-// 					$('.CurrentLabelRelations').children().eq(i).attr('id', data.relations[i].id);
-// 				}
+	$('.CurrentLabelRelationsName').click(function(e) {
+		var id = e.currentTarget.id;
+		$.get('http://10.14.41.20:8081/api/labels/'+id, function(data, status){
+			console.log(data)
+			$('.CurrentLabelName').html(data.name);
+			for(var i = 0; i < 10; i++) {
+				if(data.relations[i]) {
+					$('.CurrentLabelRelations').children().eq(i).html(data.relations[i].name);
+					$('.CurrentLabelRelations').children().eq(i).attr('id', data.relations[i].id);
+				}
 				
-// 				drawDots(data);
-// 			}
-// 		})
-// 	})
-// })
+				drawDots(data);
+			}
+		})
+	})
+})
 var dataLast = {
   "name": "Label1",
   "id": "asdfasdfasd1",
@@ -332,7 +332,7 @@ function drawTwoSetDots(data1, data2) {
 	renderer.render(stage);
 }
 
-drawTwoSetDots(dataLast, data);
+// drawTwoSetDots(dataLast, data);
 // drawDots(data);
 
 function drawDots(data) {
@@ -349,10 +349,10 @@ function drawDots(data) {
 			dot.index = [j,k];
 
 			dot.on('mousedown', (e) => {
-				// showVideo(data.history.videos[e.target.index[0]][e.target.index[1]]);
-				showVideo({
-					href: 'adsfasdfadsf'
-				})
+				showVideo(data.history.videos[e.target.index[0]][e.target.index[1]]);
+				// showVideo({
+				// 	href: 'adsfasdfadsf'
+				// })
 			})
 			stage.addChild(dot); 
 		}
