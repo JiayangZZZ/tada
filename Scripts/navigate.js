@@ -357,8 +357,8 @@ function drawDots(data) {
 	for(var j = 0; j < data.history.videos.length; j++) {
 		for(var k = 0; k < data.history.videos[j].length; k++) {
 			var dot = new PIXI.Graphics();
-			dot.beginFill(4473924);
-			dot.drawRoundedRect(0, 0, 15, 15, 5);
+			dot.beginFill(16777215);
+			dot.drawRoundedRect(0, 0, 15, 15, 8);
 			dot.x = width - 20*(j+1);
 			dot.y = height - 20*(k+1);
 			dot.interactive = true;
