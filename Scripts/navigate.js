@@ -1,5 +1,5 @@
-var width = 1200
-	, height =400;
+var width = 2500
+	, height =800;
 
 var renderer = PIXI.autoDetectRenderer(width, height, {
 	transparent: true,
@@ -336,6 +336,7 @@ function drawTwoSetDots(data1, data2) {
 // drawDots(data);
 
 function drawDots(data) {
+  var width = 2500;
 	var stage = new PIXI.Container();
 	for(var j = 0; j < data.history.videos.length; j++) {
 		for(var k = 0; k < data.history.videos[j].length; k++) {
