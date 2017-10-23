@@ -9,6 +9,7 @@ var renderer = PIXI.autoDetectRenderer(width, height, {
 
 document.getElementById('ChartStage').appendChild(renderer.view);
 var stage = new PIXI.Container();
+var oldData;
 
 // $('.LastLabelName').html("Watermellon");
 
@@ -25,11 +26,19 @@ $(document).ready(function() {
 			for(var i = 0; i < 10; i++) {
 				if(data.relations[i]) {
 					$('.CurrentLabelRelations').children().eq(i).html(data.relations[i].name);
-					$('.CurrentLabelRelations').children().eq(i).attr('id', data.relations[i].id);
+					$('.CurrentLabelRelations').children().eq(i).attr('id', data.relations[i]._id);
 				}
-				
-				drawDots(data);
 			}
+
+      if(!oldData) {
+        drawDots(data);
+      }
+      else {
+        $('.LastLabelName').html(oldData.name);
+        // drawTwoSetDots(oldData, data);
+        drawDots(data);
+      }
+      oldData = data;
 		})
 	})
 
@@ -41,11 +50,18 @@ $(document).ready(function() {
 			for(var i = 0; i < 10; i++) {
 				if(data.relations[i]) {
 					$('.CurrentLabelRelations').children().eq(i).html(data.relations[i].name);
-					$('.CurrentLabelRelations').children().eq(i).attr('id', data.relations[i].id);
+					$('.CurrentLabelRelations').children().eq(i).attr('id', data.relations[i]._id);
 				}
-				
-				drawDots(data);
 			}
+      if(!oldData) {
+        drawDots(data);
+      }
+      else {
+        $('.LastLabelName').html(oldData.name);
+        // drawTwoSetDots(oldData, data);
+        drawDots(data);
+      }
+      oldData = data;
 		})
 	})
 })
