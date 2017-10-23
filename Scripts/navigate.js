@@ -387,7 +387,7 @@ function showVideo(data) {
 
   $('.VideoTitle').attr('href', href).html(data.title);
   $('.VideoChannel').html("Posted on " + data.channel);
-  $('.VideoPostedTime').html("at " + data.timestamp);
+  $('.VideoPostedTime').html("at " + formatTimestamp(data.timestamp));
   $('.VideoView').html("Views: " + data.views);
 }
 
@@ -412,4 +412,18 @@ $('.OverlayClose').click(function() {
 
 function include(arr, obj) {
     return (arr.indexOf(obj) != -1);
+}
+
+function formatTimestamp(timestamp) {
+  var date = new Date(timestamp*1000);
+
+  var day = date.getDate()
+    , month = date.getMonth()
+    , year = date.getFullYear()
+    , hours = date.getHours()
+    , minutes = "0" + date.getMinutes();
+
+  var formattedTime = year + '/' + month + '/' + day + '/' + hours + ':' + minutes.substr(-2) ;
+
+  return formattedTime
 }
