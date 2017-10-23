@@ -144,10 +144,11 @@ canvas {
 .Overlay {
 	opacity: 0;
 	position: absolute;
-	height: 600px;
-	width: 900px;
+	height: 700px;
+	width: 1120px;
 	margin: auto;
-	top: 50px;
+	top: 100px;
+	left: 200px;
 	-webkit-transition: opacity 0.5s ease-in;
 	transition: opacity 0.5s ease-in;
 }
@@ -162,15 +163,21 @@ canvas {
 }
 
 .OverlayInfo {
-	width: 100%;
 	height: 20%;
 	color: #fff;
 	padding: 10px;
-	font-size: 12px;
+	font-size: 14px;
+	background-color: rgba(0, 0, 0, 0.8);
 }
 
 .VideoTitle {
 	font-size: 24px;
+	text-decoration: none;
+	color: #70abaf;
+}
+
+.VideoTitle:hover {
+	opacity: 0.5;
 }
 
 .VideoDescription {

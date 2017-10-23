@@ -378,10 +378,17 @@ function drawDots(data) {
 }
 
 function showVideo(data) {
+  console.log(data);
+  var href = 'https://www.youtube.com/embed/'+ getId(data.href) +'?autoplay=1';
 	$('.Overlay').removeClass('hidden').addClass('reveal');
-	$('.OverlayVideo').attr('src', 'https://www.youtube.com/embed/'+ getId(data.href) +'?autoplay=1');
+	$('.OverlayVideo').attr('src', href);
 	$('.Overlay').addClass('load');
 	$('.OverlayVideo').addClass('load');
+
+  $('.VideoTitle').attr('href', href).html(data.title);
+  $('.VideoChannel').html("Posted on " + data.channel);
+  $('.VideoPostedTime').html("at " + data.timestamp);
+  $('.VideoView').html("Views: " + data.views);
 }
 
 function getId(url) {
