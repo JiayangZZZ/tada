@@ -13,10 +13,11 @@ var oldData;
 
 // $('.LastLabelName').html("Watermellon");
 
-// $('.CurrentLabelName').html("Darth Vader");
-// for(var i = 0; i< 5; i++) {
-// 	$('.CurrentLabelRelations').children().eq(i).html("Relation Name" + i)
-// }
+$('.CurrentLabelName').html("Darth Vader");
+for(var i = 0; i< 5; i++) {
+	$('.CurrentLabelRelations').children().eq(i).html("Relation Name" + i)
+}
+
 $(document).ready(function() {
 	$('.LeftBarLabel').click(function(e) {
 		var id = e.currentTarget.id;
@@ -269,82 +270,87 @@ var data = {
 function drawTwoSetDots(data1, data2) {
 	var stage = new PIXI.Container();
 
-	var label1 = data1.name;
+	var label1 = data1._id;
 	var history1 = data1.history.videos;
 	var history2 = data2.history.videos;
 
 	for(var j = 0; j < history1.length; j++) {
 		var currentY = height/2 + 20;
 
-		for(var k = 0; k < history1[j].length; k++) {
-			if(!include(history2[j][k].labels, label1)) {
-				var dot = new PIXI.Graphics();
-				dot.beginFill(6777822);
-			
-				dot.drawRoundedRect(0, 0, 15, 15, 5);
-				dot.x = width - 20*(j+1);
-				dot.y = currentY - 20;
-				currentY -= 20;
-				dot.interactive = true;
-				dot.buttonMode = true;
-				dot.index = [j,k];
+    if(history2[j].length > history1[j].length) {
+      for(var k = 0; k < history1[j].length; k++) {
+        // console.log(j, k)
+        // console.log(history2[j][k])
+        if(!include(history2[j][k].labels, label1)) {
+          console.log("not shared")
+          var dot = new PIXI.Graphics();
+          dot.beginFill(6777822);
+          dot.drawRoundedRect(0, 0, 15, 15, 5);
+          dot.x = width - 20*(j+1);
+          dot.y = currentY - 20;
+          currentY -= 20;
+          dot.interactive = true;
+          dot.buttonMode = true;
+          dot.index = [j,k];
 
-				dot.on('mousedown', (e) => {
-					// showVideo(data.history.videos[e.target.index[0]][e.target.index[1]]);
-					showVideo({
-						href: 'adsfasdfadsf'
-					})
-				})
-				stage.addChild(dot); 
-			}
-
-		}
+          dot.on('mousedown', (e) => {
+            // showVideo(data.history.videos[e.target.index[0]][e.target.index[1]]);
+            showVideo({
+              href: 'adsfasdfadsf'
+            })
+          })
+          stage.addChild(dot); 
+        }
+        console.log("shared")
+      }
+    }
+		
 	}
 
-	for(var j = 0; j < history2.length; j++) {
-		var middleCount = [];
-		var lowerCount = [];
+	// for(var j = 0; j < history2.length; j++) {
+	// 	var middleCount = [];
+	// 	var lowerCount = [];
 
-		for(var k = 0; k < history2[j].length; k++) {
-			var dot = new PIXI.Graphics();
-			if(include(history2[j][k].labels, label1)) {
-				dot.beginFill(11824011);
-				dot.index = [j,k];
-				middleCount.push(dot);
-			}
-			else {
-				dot.beginFill(16777215);
-				dot.index = [j,k];
-				lowerCount.push(dot);
-			}
-			dot.drawRoundedRect(0, 0, 15, 15, 5);
-			dot.x = width - 20*(j+1);
-			dot.interactive = true;
-			dot.buttonMode = true;
+	// 	for(var k = 0; k < history2[j].length; k++) {
+	// 		var dot = new PIXI.Graphics();
+	// 		if(include(history2[j][k].labels, label1)) {
+	// 			dot.beginFill(11824011);
+	// 			dot.index = [j,k];
+	// 			middleCount.push(dot);
+	// 		}
+	// 		else {
+	// 			dot.beginFill(16777215);
+	// 			dot.index = [j,k];
+	// 			lowerCount.push(dot);
+	// 		}
+	// 		dot.drawRoundedRect(0, 0, 15, 15, 5);
+	// 		dot.x = width - 20*(j+1);
+	// 		dot.interactive = true;
+	// 		dot.buttonMode = true;
 
-			dot.on('mousedown', (e) => {
-				// showVideo(data.history.videos[e.target.index[0]][e.target.index[1]]);
-				showVideo({
-					href: 'adsfasdfadsf'
-				})
-			})
-			stage.addChild(dot); 
-		}
-		console.log(middleCount, lowerCount);
-		console.log("one loop")
+	// 		dot.on('mousedown', (e) => {
+	// 			// showVideo(data.history.videos[e.target.index[0]][e.target.index[1]]);
+	// 			showVideo({
+	// 				href: 'adsfasdfadsf'
+	// 			})
+	// 		})
+	// 		stage.addChild(dot); 
+	// 	}
+	// 	// console.log(middleCount, lowerCount);
+	// 	// console.log("one loop")
 
-		var currentY = height/2;
-		for(var i = 0; i < middleCount.length; i++) {
-			console.log(currentY)
-			middleCount[i].y = currentY + 20;
-			currentY += 20;
-		}
-		for(var i = 0; i < lowerCount.length; i++) {
-			lowerCount[i].y = currentY + 20;
-			currentY += 20;
-		}
+	// 	var currentY = height/2;
+	// 	for(var i = 0; i < middleCount.length; i++) {
+	// 		console.log(currentY)
+	// 		middleCount[i].y = currentY + 20;
+	// 		currentY += 20;
+	// 	}
+	// 	for(var i = 0; i < lowerCount.length; i++) {
+	// 		lowerCount[i].y = currentY + 20;
+	// 		currentY += 20;
+	// 	}
 
-	}
+	// }
 	renderer.render(stage);
 }
 
@@ -366,10 +372,11 @@ function drawDots(data) {
 			dot.index = [j,k];
 
 			dot.on('mousedown', (e) => {
-				showVideo(data.history.videos[e.target.index[0]][e.target.index[1]]);
-				// showVideo({
-				// 	href: 'adsfasdfadsf'
-				// })
+        var videoId = data.history.videos[e.target.index[0]][e.target.index[1]].id;
+
+        $.get('http://10.14.41.20:8081/api/videos/'+videoId, function(data, status){
+          showVideo(data);
+        })
 			})
 			stage.addChild(dot); 
 		}
@@ -378,7 +385,6 @@ function drawDots(data) {
 }
 
 function showVideo(data) {
-  console.log(data);
   var href = 'https://www.youtube.com/embed/'+ getId(data.href) +'?autoplay=1';
 	$('.Overlay').removeClass('hidden').addClass('reveal');
 	$('.OverlayVideo').attr('src', href);
@@ -389,6 +395,12 @@ function showVideo(data) {
   $('.VideoChannel').html("Posted on " + data.channel);
   $('.VideoPostedTime').html("at " + formatTimestamp(data.timestamp));
   $('.VideoView').html("Views: " + data.views);
+
+  for(var i = 0; i < data.labels.length; i++) {
+    $('.VideoLabels').append(
+      $('<li>').attr('class', 'VideoLabelsName').append(
+        $('<a>').append(data.labels[i].name)));
+  }
 }
 
 function getId(url) {
