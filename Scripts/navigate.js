@@ -33,8 +33,8 @@ $(document).ready(function() {
       }
       else {
         $('.LastLabelName').html(oldData.name);
-        // drawTwoSetDots(oldData, data);
-        drawDots(data);
+        drawTwoSetDots(oldData, data);
+        // drawDots(data);
       }
       oldData = data;
 		})
@@ -56,8 +56,8 @@ $(document).ready(function() {
       }
       else {
         $('.LastLabelName').html(oldData.name);
-        // drawTwoSetDots(oldData, data);
-        drawDots(data);
+        drawTwoSetDots(oldData, data);
+        // drawDots(data);
       }
       oldData = data;
 		})
@@ -303,10 +303,10 @@ function drawTwoSetDots(data1, data2) {
             dot.index = [j,k];
 
             dot.on('mousedown', (e) => {
-              // showVideo(data.history.videos[e.target.index[0]][e.target.index[1]]);
-              showVideo({
-                href: 'adsfasdfadsf'
-              })
+              showVideo(data.history.videos[e.target.index[0]][e.target.index[1]]);
+              // showVideo({
+              //   href: 'adsfasdfadsf'
+              // })
             })
             stage.addChild(dot); 
           }
@@ -323,10 +323,10 @@ function drawTwoSetDots(data1, data2) {
             dot.index = [j,k];
 
             dot.on('mousedown', (e) => {
-              // showVideo(data.history.videos[e.target.index[0]][e.target.index[1]]);
-              showVideo({
-                href: 'adsfasdfadsf'
-              })
+              showVideo(data.history.videos[e.target.index[0]][e.target.index[1]]);
+              // showVideo({
+              //   href: 'adsfasdfadsf'
+              // })
             })
             stage.addChild(dot); 
           }
@@ -360,10 +360,10 @@ function drawTwoSetDots(data1, data2) {
 			dot.buttonMode = true;
 
 			dot.on('mousedown', (e) => {
-				// showVideo(data.history.videos[e.target.index[0]][e.target.index[1]]);
-				showVideo({
-					href: 'adsfasdfadsf'
-				})
+				showVideo(data.history.videos[e.target.index[0]][e.target.index[1]]);
+				// showVideo({
+				// 	href: 'adsfasdfadsf'
+				// })
 			})
 			stage.addChild(dot); 
 		}
