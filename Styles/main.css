@@ -101,14 +101,16 @@ body {
 }
 
 .LastLabelName {
-	font-size: 20px;
+	font-size: 26px;
 	font-weight: 900;
 	margin: 10px 50px;
-	color: #68a9ff;
+	color: #28539A;
 }
 
 .CurrentLabelRelations {
 	list-style: none;
+	display: inline-block;
+	margin: 0;
 }
 
 .CurrentLabelName {
