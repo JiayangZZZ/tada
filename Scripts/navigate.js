@@ -13,10 +13,7 @@ var oldData;
 
 // $('.LastLabelName').html("Watermellon");
 
-$('.CurrentLabelName').html("Darth Vader");
-for(var i = 0; i< 5; i++) {
-	$('.CurrentLabelRelations').children().eq(i).html("Relation Name" + i)
-}
+$('.CurrentLabelName').html("Welcome");
 
 $(document).ready(function() {
 	$('.LeftBarLabel').click(function(e) {
