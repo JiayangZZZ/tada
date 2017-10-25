@@ -11,61 +11,58 @@ document.getElementById('ChartStage').appendChild(renderer.view);
 var stage = new PIXI.Container();
 var oldData;
 
-$('.LastLabelName').html("Watermellon");
+//$('.LastLabelName').html("Watermellon");
 
-$('.CurrentLabelName').html("Darth Vader");
-for(var i = 0; i< 5; i++) {
-	$('.CurrentLabelRelations').children().eq(i).html("Relation Name" + i)
-}
+$('.CurrentLabelName').html("Welcome");
 
-// $(document).ready(function() {
-// 	$('.LeftBarLabel').click(function(e) {
-// 		var id = e.currentTarget.id;
-// 		$.get('http://10.14.41.20:8081/api/labels/'+id, function(data, status){
-// 			console.log(data)
-// 			$('.CurrentLabelName').html(data.name);
-// 			for(var i = 0; i < 10; i++) {
-// 				if(data.relations[i]) {
-// 					$('.CurrentLabelRelations').children().eq(i).html(data.relations[i].name);
-// 					$('.CurrentLabelRelations').children().eq(i).attr('id', data.relations[i]._id);
-// 				}
-// 			}
+$(document).ready(function() {
+	$('.LeftBarLabel').click(function(e) {
+		var id = e.currentTarget.id;
+		$.get('http://10.14.41.20:8081/api/labels/'+id, function(data, status){
+			console.log(data)
+			$('.CurrentLabelName').html(data.name);
+			for(var i = 0; i < 10; i++) {
+				if(data.relations[i]) {
+					$('.CurrentLabelRelations').children().eq(i).html(data.relations[i].name);
+					$('.CurrentLabelRelations').children().eq(i).attr('id', data.relations[i]._id);
+				}
+			}
 
-//       if(!oldData) {
-//         drawDots(data);
-//       }
-//       else {
-//         $('.LastLabelName').html(oldData.name);
-//         // drawTwoSetDots(oldData, data);
-//         drawDots(data);
-//       }
-//       oldData = data;
-// 		})
-// 	})
+      if(!oldData) {
+        drawDots(data);
+      }
+      else {
+        $('.LastLabelName').html(oldData.name);
+        // drawTwoSetDots(oldData, data);
+        drawDots(data);
+      }
+      oldData = data;
+		})
+	})
 
-// 	$('.CurrentLabelRelationsName').click(function(e) {
-// 		var id = e.currentTarget.id;
-// 		$.get('http://10.14.41.20:8081/api/labels/'+id, function(data, status){
-// 			console.log(data)
-// 			$('.CurrentLabelName').html(data.name);
-// 			for(var i = 0; i < 10; i++) {
-// 				if(data.relations[i]) {
-// 					$('.CurrentLabelRelations').children().eq(i).html(data.relations[i].name);
-// 					$('.CurrentLabelRelations').children().eq(i).attr('id', data.relations[i]._id);
-// 				}
-// 			}
-//       if(!oldData) {
-//         drawDots(data);
-//       }
-//       else {
-//         $('.LastLabelName').html(oldData.name);
-//         // drawTwoSetDots(oldData, data);
-//         drawDots(data);
-//       }
-//       oldData = data;
-// 		})
-// 	})
-// })
+	$('.CurrentLabelRelationsName').click(function(e) {
+		var id = e.currentTarget.id;
+		$.get('http://10.14.41.20:8081/api/labels/'+id, function(data, status){
+			console.log(data)
+			$('.CurrentLabelName').html(data.name);
+			for(var i = 0; i < 10; i++) {
+				if(data.relations[i]) {
+					$('.CurrentLabelRelations').children().eq(i).html(data.relations[i].name);
+					$('.CurrentLabelRelations').children().eq(i).attr('id', data.relations[i]._id);
+				}
+			}
+      if(!oldData) {
+        drawDots(data);
+      }
+      else {
+        $('.LastLabelName').html(oldData.name);
+        // drawTwoSetDots(oldData, data);
+        drawDots(data);
+      }
+      oldData = data;
+		})
+	})
+})
 var dataLast = {
   "name": "Label1",
   "_id": "asdfasdfasd1",
@@ -388,7 +385,7 @@ function drawTwoSetDots(data1, data2) {
 	renderer.render(stage);
 }
 
-drawTwoSetDots(dataLast, data);
+// drawTwoSetDots(dataLast, data);
 // drawDots(data);
 
 function drawDots(data) {

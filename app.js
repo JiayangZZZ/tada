@@ -102,24 +102,24 @@ var label = {
 }
 
 app.get('/', function(req, res) {
-  res.render('index', {
-    title: "Tada Interface Prototype",
-    data: labels.data
-  })
-  // request.get({
-  //   headers: {'content-type' : 'application/json; charset=utf-8'},
-  //   url: 'http://10.14.41.20:8081/api/labels',
-  //   json: true
-  // }, function(err, r, body) {
-  //   if(err)
-  //     console.log(err);
-  //   else {
-  //     res.render('index', {
-  //       title: "Tada interface prototype",
-  //       data: body.data
-  //     })
-  //   }
+  // res.render('index', {
+  //   title: "Tada Interface Prototype",
+  //   data: labels.data
   // })
+  request.get({
+    headers: {'content-type' : 'application/json; charset=utf-8'},
+    url: 'http://10.14.41.20:8081/api/labels',
+    json: true
+  }, function(err, r, body) {
+    if(err)
+      console.log(err);
+    else {
+      res.render('index', {
+        title: "Tada interface prototype",
+        data: body.data
+      })
+    }
+  })
 })
 
 /*
